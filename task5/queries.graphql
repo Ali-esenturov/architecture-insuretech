@@ -1,0 +1,37 @@
+query {
+  client(id: "1") {
+    id
+    name
+    documents {
+      type
+      number
+    }
+    relatives {
+      name
+      relationType
+    }
+  }
+}
+
+query {
+  client(id: "1") {
+    id
+    name
+  }
+}
+
+query {
+  client(id: "1") {
+    documents {
+      number
+    }
+  }
+}
+
+query {
+  client(id: "1") {
+    relatives {
+      name
+    }
+  }
+}
