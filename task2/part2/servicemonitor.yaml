@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: node-hpa-monitor
+  labels:
+    release: prometheus
+spec:
+  selector:
+    matchLabels:
+      app: node-hpa-demo
+  endpoints:
+  - port: http
+    path: /metrics
+    interval: 15s

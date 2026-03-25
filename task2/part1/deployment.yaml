@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-hpa-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-hpa-demo
+  template:
+    metadata:
+      labels:
+        app: node-hpa-demo
+    spec:
+      containers:
+      - name: node-app
+        image: node-hpa-demo
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 7777
+        resources:
+          requests:
+            cpu: 150m
+          limits:
+            cpu: 500m

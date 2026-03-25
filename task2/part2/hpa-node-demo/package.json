@@ -1,0 +1,8 @@
+{
+  "name": "hpa-demo",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "prom-client": "^15.1.3"
+  }
+}
